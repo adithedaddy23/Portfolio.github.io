@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    margin: 0rem;
+    user-select: none;
+}
+
+#blob {
+    width: 40vw; /* Responsive width */
+    height: 40vw; /* Make the height equal to the width for a circular shape */
+    max-width: 50vh; /* Ensure the blob doesn’t get too big on larger screens */
+    max-height: 50vh;
+    border-radius: 50% 100% 50% 100%;
+    background-image: linear-gradient(to right, #77dfff 0%, #5ccfeb 10%, #ceff7f 21%, #f9c385 52%, #cf556c 78%, #b12a5b 100%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    z-index: 1;
+    animation: rotate 10s infinite linear;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    #blob {
+        width: 60vw; /* Increase the size on smaller screens */
+        height: 60vw;
+    }
+}
+
+@media (max-width: 480px) {
+    #blob {
+        width: 70vw; /* Further increase the size on very small screens */
+        height: 70vw;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@media(width<1400px)
+{
+    #blob{
+        display: none;
+    }
+}
+#blur{
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(12rem);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    z-index: 2;
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.links{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+nav a{
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 0 20px;
+    position: relative;
+    font-family: "Poppins", system-ui;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 300ms ease;
+    
+}
+.home{
+    margin-right: auto;
+}
+
+nav i{
+    color: white;
+    font-size: 1.2rem;
+    margin-inline: 1rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+nav i:hover{
+    color: black;
+}
+nav a:hover{
+    color: black;
+    scale: 1.1;
+}
+.logo:hover{
+    color: black;
+    background-color: black;
+}
+
+.container{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10rem;
+    margin-bottom: 20.5rem;
+
+}
+.container .header{
+    color: white;
+    font-family: "Poppins", system-ui;
+}
+.container .content{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", system-ui;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2rem;
+    width: 57%;
+    gap: 1rem;
+}
+.container .content h2{
+    font-size: 3rem;
+}
+.container .content .name{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px white;
+    z-index: 2;
+    transition: all 300ms ease;
+    cursor: pointer;
+    display: inline-block;
+}
+.container .content .name:hover{
+    font-size: 3.4rem
+}
+
+section{
+    z-index: 2;
+    position: relative;
+}
+
+.container .topic{
+    font-size: 2rem;
+    color: white;
+    font-family: "Poppins", system-ui;
+}
+
+.container .skills{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3rem;
+    margin-top: rem;
+}
+.container .skills .card{
+    margin-bottom: 2rem;
+    margin-inline: 1rem;
+    padding: 2rem;
+    align-items: center;
+    color: white;
+    font-family: "Poppins", system-ui;
+    border-radius: 4px;
+    border: none;
+    min-width: 120px;
+    background-color: rgb(162, 162, 162,0.3);
+    transition: all 300ms ease-out;
+}
+.container .skills .card h3{
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.container .skills .card:hover{
+    scale: 1.1;
+}
+
+@media (width<1100px)
+{
+    .container .skills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container .skills .card:hover{
+        scale: 1;
+    }
+}
+
+.container .pricing .topic{
+    color: white;
+    font-family: "Poppins", system-ui;
+    font-size: 2rem;
+    margin-bottom: 200px;
+}
+
+.container .pricing{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.container .pricing .card{
+    background-color: rgb(162, 162, 162,0.3);
+    margin: 1rem;
+    color: white;
+    font-family: "Poppins", system-ui;
+    padding: 6vh;
+    border-radius: 4px;
+    height: 35vh;
+    transition: all 300ms ease-out;
+   min-width: 100px;
+}
+
+.container .pricing .card:hover{
+    scale: 1.05;
+}
+
+.container .pricing .card h4{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.container .pricing .card h3{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.container .pricing .card i{
+    margin-right: 1rem;
+}
+.container .pricing .card p{
+    line-height: 2.5rem;
+}
+
+@media (width<1150px)
+{
+    .container .skills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container .skills .card:hover{
+        scale: 1;
+    }
+    .container .pricing{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .links{
+        display: none;
+    }
+    nav i{
+        margin-right: auto;
+    }
+    .container .pricing .card:hover{
+        scale: 1;
+    }
+}
+
+@media(width<800px)
+{
+    .container .skills{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .container .pricing{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
